@@ -9,11 +9,11 @@ import ListaCiudades from "./components/ListaCiudades";
 function App(){
 
   return (
-    <>
+    <Router>
       <nav>
-        <link to="/" style={{ margin: "0 10px"}}>Inicio</link>
-        <link to="/acerca" style={{ margin: "0 10px"}}>Acerca</link>
-        <link to="/contacto" style={{ margin: "0 10px"}}>Contacto</link>
+        <Link to="/" style={{ margin: "0 10px"}}>Inicio</Link>
+        <Link to="/acerca" style={{ margin: "0 10px"}}>Acerca</Link>
+        <Link to="/contacto" style={{ margin: "0 10px"}}>Contacto</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Inicio />}/>
@@ -21,9 +21,7 @@ function App(){
         <Route path="/contacto" element={<Contacto />}/>
         <Route path="*" element={<NotFound />}/>
       </Routes>
-      <h1>Mundial 2026-Clima de Sedes</h1>
-      <ListaCiudades />
-    </>
+    </Router>
   );
 }
 
