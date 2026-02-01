@@ -11,11 +11,10 @@ function ClimaCiudad({ ciudad }) {
     async function obtenerClima() {
       setCargando(true);
 
-      console.log("API KEY:", import.meta.env.VITE_WEATHER_API_KEY);
+    const respuesta = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${import.meta.env.VITE_WEATHER_API_KEY}&units=metric&lang=es`
+    );
 
-      const respuesta = await fetch(
-        `/api/weather?q=${ciudad}&appid=${import.meta.env.VITE_WEATHER_API_KEY}&units=metric&lang=es`
-      );
 
       const datos = await respuesta.json();
       setClima(datos);
