@@ -1,18 +1,20 @@
 import { useState } from "react";
+import ClimaCiudad from "./ClimaCiudad";
 
 function ListaCiudades(){
     const[ ciudadSeleccionada, setCiudadSeleccionada ] = useState(null);
 
     const ciudades = [
-        "Ciudad de México",
-        "Guadalajara",
-        "Monterrey",
-        "Nueva York",
-        "Los Ángeles",
-        "Miami",
-        "Toronto",
-        "Vancouver"
+    "Mexico City",
+    "Guadalajara",
+    "Monterrey",
+    "New York",
+    "Los Angeles",
+    "Miami",
+    "Toronto",
+    "Vancouver"
     ];
+
 
     function seleccionarCiudad(ciudad){
         setCiudadSeleccionada(ciudad);
@@ -30,7 +32,7 @@ function ListaCiudades(){
                 ))}
             </ul>
             {ciudadSeleccionada && (
-                    <p>Ciudad Seleccionada: {ciudadSeleccionada}</p>
+                    <ClimaCiudad ciudad={ciudadSeleccionada} />
             )}
         </div>
     );
