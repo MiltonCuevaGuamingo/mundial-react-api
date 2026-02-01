@@ -12,9 +12,8 @@ function ClimaCiudad({ ciudad }) {
       setCargando(true);
 
     const respuesta = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${import.meta.env.VITE_WEATHER_API_KEY}&units=metric&lang=es`
+      `/api/weather?q=${ciudad}&appid=${import.meta.env.VITE_WEATHER_API_KEY}&units=metric&lang=es` 
     );
-
 
       const datos = await respuesta.json();
       setClima(datos);
@@ -23,10 +22,8 @@ function ClimaCiudad({ ciudad }) {
     obtenerClima();
   }, [ciudad]);
 
-  if (cargando) {
-    return <p>Cargando clima......</p>;
-  }
-
+  if (cargando) return <p>Cargando clima....</p>;
+  
   if (!clima || clima.cod !== 200) {
     return <p>No se pudo obtener el clima para {ciudad}.</p>;
   }
