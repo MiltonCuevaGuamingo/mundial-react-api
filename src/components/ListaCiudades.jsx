@@ -26,7 +26,7 @@ function ListaCiudades(){
             <ul>
                 {ciudades.map( ciudad => (
                     <li key={ciudad} onClick={() => seleccionarCiudad(ciudad)}
-                    style={{ cursor: "pointer", fontWeight: ciudad === ciudadSeleccionada ? "bold" : "normal" }}>
+                    selected = {ciudad === ciudadSeleccionada ? true : undefined }>
                         {ciudad}
                     </li>
                 ))}

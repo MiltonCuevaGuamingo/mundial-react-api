@@ -1,3 +1,5 @@
+import './app.css'; 
+
 import ListaCiudades from "./components/ListaCiudades";
 
 function App(){
