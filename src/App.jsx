@@ -1,29 +1,35 @@
-import './App.css'; 
+import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Inicio from './pages/Inicio'
 import Acerca from './pages/Acerca'
 import Contacto from './pages/Contacto'
 import NotFound from './pages/NotFound'
-import ListaCiudades from "./components/ListaCiudades";
 
 function App(){
-
   return (
     <Router>
-      <nav>
-        <Link to="/" style={{ margin: "0 10px"}}>Inicio</Link>
-        <Link to="/acerca" style={{ margin: "0 10px"}}>Acerca</Link>
-        <Link to="/contacto" style={{ margin: "0 10px"}}>Contacto</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Inicio />}/>
-        <Route path="/acerca" element={<Acerca />}/>
-        <Route path="/contacto" element={<Contacto />}/>
-        <Route path="*" element={<NotFound />}/>
-      </Routes>
+      <div className="app">
+        <header className="topbar">
+          <h1 className="brand">Mundial 2026</h1>
+
+          <nav className="nav">
+            <Link to="/" className="nav-link">Inicio</Link>
+            <Link to="/acerca" className="nav-link">Acerca</Link>
+            <Link to="/contacto" className="nav-link">Contacto</Link>
+          </nav>
+        </header>
+
+        <main className="card">
+          <Routes>
+            <Route path="/" element={<Inicio />}/>
+            <Route path="/acerca" element={<Acerca />}/>
+            <Route path="/contacto" element={<Contacto />}/>
+            <Route path="*" element={<NotFound />}/>
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }
 
 export default App;
-
