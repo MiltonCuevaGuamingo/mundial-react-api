@@ -14,7 +14,6 @@ function ClimaCiudad({ ciudad }) {
     const respuesta = await fetch(
       `/api/weather?q=${ciudad}&appid=${import.meta.env.VITE_WEATHER_API_KEY}&units=metric&lang=es` 
     );
-
       const datos = await respuesta.json();
       setClima(datos);
       setCargando(false);
